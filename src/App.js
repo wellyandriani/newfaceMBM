@@ -1,25 +1,45 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Particles from 'react-particles-js';
 import './App.css';
+import { Container, Row, Col } from 'reactstrap';
+
+import logo from './mbm.png'
+
+const particleOpt = {
+    particles: {
+      number: {
+        value : 200,
+        density:{
+          enable: true,
+          value_area:700
+        }
+      }
+    }
+  }
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <div>
+            <img className="App-logo" src={logo} alt="logo"/>
+        </div>
+        <Particles 
+              params={particleOpt}
+            />
+        <div>
+          <Container>
+            <Row>
+              <Col xs="6" sm="4">
+              <img  src={logo} alt="logo"/></Col>
+              <Col xs="6" sm="4">
+              <img  src={logo} alt="logo"/></Col>
+              <Col sm="4">
+              <img  src={logo} alt="logo"/></Col>
+            </Row>
+        </Container>
+        </div>
       </div>
     );
   }
